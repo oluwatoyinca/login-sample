@@ -86,13 +86,11 @@ const Login = () => {
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
         <Input label="E-mail" 
-          className={`${classes.control} ${emailState.isValid === false ? classes.invalid : ''}`} 
           type="email"
           id="email"
           value={emailState.value}
           onChange={emailChangeHandler}/>
         <Input label="Password" 
-          className={`${classes.control} ${passState.isValid === false ? classes.invalid : ''}`} 
           type="password"
           id="password"
           value={passState.value}
