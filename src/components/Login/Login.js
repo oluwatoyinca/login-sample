@@ -4,6 +4,7 @@ import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
 import AuthContext from '../../context/auth-context';
+import Input from '../UI/Input/Input';
 
 const emailVal = {
   value: '',
@@ -84,7 +85,19 @@ const Login = () => {
   return (
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
-        <div
+        <Input label="E-mail" 
+          className={`${classes.control} ${emailState.isValid === false ? classes.invalid : ''}`} 
+          type="email"
+          id="email"
+          value={emailState.value}
+          onChange={emailChangeHandler}/>
+        <Input label="Password" 
+          className={`${classes.control} ${passState.isValid === false ? classes.invalid : ''}`} 
+          type="password"
+          id="password"
+          value={passState.value}
+          onChange={passwordChangeHandler}/>
+        {/* <div
           className={`${classes.control} ${
             emailState.isValid === false ? classes.invalid : ''
           }`}
@@ -96,8 +109,8 @@ const Login = () => {
             value={emailState.value}
             onChange={emailChangeHandler}
           />
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className={`${classes.control} ${
             passState.isValid === false ? classes.invalid : ''
           }`}
@@ -109,7 +122,7 @@ const Login = () => {
             value={passState.value}
             onChange={passwordChangeHandler}
           />
-        </div>
+        </div> */}
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login
