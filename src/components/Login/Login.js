@@ -88,11 +88,13 @@ const Login = () => {
         <Input label="E-mail" 
           type="email"
           id="email"
+          isValid={emailIsValid}
           value={emailState.value}
           onChange={emailChangeHandler}/>
         <Input label="Password" 
           type="password"
           id="password"
+          isValid={passIsValid}
           value={passState.value}
           onChange={passwordChangeHandler}/>
         <div className={classes.actions}>
